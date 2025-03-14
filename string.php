@@ -101,7 +101,7 @@
     <td><?php echo $min; ?></td>
   </tr>
   <tr>
-    <td>Sekunda</td>
+    <td>Sekund</td>
     <td><?php echo $sek; ?></td>
   </tr>
 </tbody>
