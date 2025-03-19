@@ -8,9 +8,11 @@
 <body>
 <?php
 
-$date = time(); 
+$data = time(); 
+$dzisiaj = date("l", $data);
+$miesiacteraz = date("F", $data);
 
-$days = [
+$dni = [
     "Sunday" => "Niedziela",
     "Monday" => "Poniedziałek",
     "Tuesday" => "Wtorek",
@@ -20,7 +22,7 @@ $days = [
     "Saturday" => "Sobota"
 ];
 
-$months = [
+$angMies = [
     "January" => "Styczeń",
     "February" => "Luty",
     "March" => "Marzec",
@@ -35,19 +37,12 @@ $months = [
     "December" => "Grudzień"
 ];
 
+$dzienTygodnia = $dni[$dzisiaj];
+$miesiac = $angMies[$miesiacteraz];
 
-$weekday = date("l", $date);
-$month = date("F", $date);
-
-//F = Pełna nazwa miesiąca
-//l = Pełna nazwa dnia tygodnia
-$dzienTygodnia = $days[$weekday];
-$miesiac = $months[$month];
-
-echo "<h1>Data i Czas</h1>";
-echo "Dziś jest: " . date("d-m-Y", $date) . " r. <br>";
-echo "Jest: " . date("i", $date) . " minut po godzinie " . date("H", $date) . "-tej <br>";
-echo "Dziś jest: " . $dzienTygodnia . ", " . date("d", $date) . " " . $miesiac . " " . date("Y", $date) . " roku.";
+echo "Dziś jest: " . date("d-m-Y", $data) . " rok <br>";
+echo "Jest: " . date("i", $data) . " minut po godzinie " . date("H", $data) . "-tej <br>";
+echo "Dziś jest: " . $dzienTygodnia . ", " . date("d", $data) . " " . $miesiac . " " . date("Y", $data) . " roku.";
 ?>
 
 </body>
