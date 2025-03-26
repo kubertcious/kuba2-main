@@ -42,7 +42,7 @@ Wybierz format daty:
     <select name="strefa" id="strefa">
         <option value="Europe/Warsaw">Polska/Warszawa</option>
         <option value="America/New_York">Ameryka/Nowy York</option>
-        <option value="Azja/Tokio">Azja/Tokio</option>
+        <option value="Asia/Tokyo">Azja/Tokio</option>
     </select>
 
     <input type="submit" name="ok">
@@ -71,17 +71,8 @@ $dni = [
 
 
 ##############
-    if($strefa == "Europe/Warsaw"){
-        date_default_timezone_set("Europe/Warsaw");
-    }
+    date_default_timezone_set($strefa);
 
-    if($strefa == "America/New_York"){
-        date_default_timezone_set("America/New_York");
-    }
-
-    if($strefa == "Azja/Tokio"){
-        date_default_timezone_set("Asia/Tokyo");
-    }
 ##############
     if($format == "RMD"){
         echo "<a>" . date("Y-m-d H:i:s") . "</a>";
